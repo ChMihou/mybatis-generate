@@ -164,76 +164,6 @@ public class TbRoleExample {
             return (Criteria) this;
         }
 
-        public Criteria andRnameIsNull() {
-            addCriterion("rname is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameIsNotNull() {
-            addCriterion("rname is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameEqualTo(String value) {
-            addCriterion("rname =", value, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameNotEqualTo(String value) {
-            addCriterion("rname <>", value, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameGreaterThan(String value) {
-            addCriterion("rname >", value, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameGreaterThanOrEqualTo(String value) {
-            addCriterion("rname >=", value, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameLessThan(String value) {
-            addCriterion("rname <", value, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameLessThanOrEqualTo(String value) {
-            addCriterion("rname <=", value, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameLike(String value) {
-            addCriterion("rname like", value, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameNotLike(String value) {
-            addCriterion("rname not like", value, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameIn(List<String> values) {
-            addCriterion("rname in", values, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameNotIn(List<String> values) {
-            addCriterion("rname not in", values, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameBetween(String value1, String value2) {
-            addCriterion("rname between", value1, value2, "rname");
-            return (Criteria) this;
-        }
-
-        public Criteria andRnameNotBetween(String value1, String value2) {
-            addCriterion("rname not between", value1, value2, "rname");
-            return (Criteria) this;
-        }
-
         public Criteria andPermissionIsNull() {
             addCriterion("permission is null");
             return (Criteria) this;
@@ -301,6 +231,76 @@ public class TbRoleExample {
 
         public Criteria andPermissionNotBetween(String value1, String value2) {
             addCriterion("permission not between", value1, value2, "permission");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameIsNull() {
+            addCriterion("rname is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameIsNotNull() {
+            addCriterion("rname is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameEqualTo(String value) {
+            addCriterion("rname =", value, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameNotEqualTo(String value) {
+            addCriterion("rname <>", value, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameGreaterThan(String value) {
+            addCriterion("rname >", value, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameGreaterThanOrEqualTo(String value) {
+            addCriterion("rname >=", value, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameLessThan(String value) {
+            addCriterion("rname <", value, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameLessThanOrEqualTo(String value) {
+            addCriterion("rname <=", value, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameLike(String value) {
+            addCriterion("rname like", value, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameNotLike(String value) {
+            addCriterion("rname not like", value, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameIn(List<String> values) {
+            addCriterion("rname in", values, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameNotIn(List<String> values) {
+            addCriterion("rname not in", values, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameBetween(String value1, String value2) {
+            addCriterion("rname between", value1, value2, "rname");
+            return (Criteria) this;
+        }
+
+        public Criteria andRnameNotBetween(String value1, String value2) {
+            addCriterion("rname not between", value1, value2, "rname");
             return (Criteria) this;
         }
     }

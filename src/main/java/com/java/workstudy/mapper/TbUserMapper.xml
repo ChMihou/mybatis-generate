@@ -3,12 +3,12 @@
 <mapper namespace="com.java.workstudy.mapper.TbUserMapper">
   <resultMap id="BaseResultMap" type="com.java.workstudy.pojo.TbUser">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="role" jdbcType="INTEGER" property="role" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, username, password, role
+    id, password, username, role
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -21,9 +21,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.java.workstudy.pojo.TbUser">
-    insert into tb_user (id, username, password, 
+    insert into tb_user (id, password, username, 
       role)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
       #{role,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.java.workstudy.pojo.TbUser">
@@ -32,11 +32,11 @@
       <if test="id != null">
         id,
       </if>
-      <if test="username != null">
-        username,
-      </if>
       <if test="password != null">
         password,
+      </if>
+      <if test="username != null">
+        username,
       </if>
       <if test="role != null">
         role,
@@ -46,11 +46,11 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="role != null">
         #{role,jdbcType=INTEGER},
@@ -60,11 +60,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.java.workstudy.pojo.TbUser">
     update tb_user
     <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="role != null">
         role = #{role,jdbcType=INTEGER},
@@ -74,8 +74,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.java.workstudy.pojo.TbUser">
     update tb_user
-    set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
+    set password = #{password,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
       role = #{role,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

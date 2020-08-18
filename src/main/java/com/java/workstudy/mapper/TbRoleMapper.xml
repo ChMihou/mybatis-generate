@@ -3,8 +3,8 @@
 <mapper namespace="com.java.workstudy.mapper.TbRoleMapper">
   <resultMap id="BaseResultMap" type="com.java.workstudy.pojo.TbRole">
     <id column="rid" jdbcType="INTEGER" property="rid" />
-    <result column="rname" jdbcType="VARCHAR" property="rname" />
     <result column="permission" jdbcType="VARCHAR" property="permission" />
+    <result column="rname" jdbcType="VARCHAR" property="rname" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    rid, rname, permission
+    rid, permission, rname
   </sql>
   <select id="selectByExample" parameterType="com.java.workstudy.pojo.TbRoleExample" resultMap="BaseResultMap">
     select
@@ -98,9 +98,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.java.workstudy.pojo.TbRole">
-    insert into tb_role (rid, rname, permission
+    insert into tb_role (rid, permission, rname
       )
-    values (#{rid,jdbcType=INTEGER}, #{rname,jdbcType=VARCHAR}, #{permission,jdbcType=VARCHAR}
+    values (#{rid,jdbcType=INTEGER}, #{permission,jdbcType=VARCHAR}, #{rname,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.java.workstudy.pojo.TbRole">
@@ -109,22 +109,22 @@
       <if test="rid != null">
         rid,
       </if>
-      <if test="rname != null">
-        rname,
-      </if>
       <if test="permission != null">
         permission,
+      </if>
+      <if test="rname != null">
+        rname,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="rid != null">
         #{rid,jdbcType=INTEGER},
       </if>
-      <if test="rname != null">
-        #{rname,jdbcType=VARCHAR},
-      </if>
       <if test="permission != null">
         #{permission,jdbcType=VARCHAR},
+      </if>
+      <if test="rname != null">
+        #{rname,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -140,11 +140,11 @@
       <if test="record.rid != null">
         rid = #{record.rid,jdbcType=INTEGER},
       </if>
-      <if test="record.rname != null">
-        rname = #{record.rname,jdbcType=VARCHAR},
-      </if>
       <if test="record.permission != null">
         permission = #{record.permission,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rname != null">
+        rname = #{record.rname,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -154,8 +154,8 @@
   <update id="updateByExample" parameterType="map">
     update tb_role
     set rid = #{record.rid,jdbcType=INTEGER},
-      rname = #{record.rname,jdbcType=VARCHAR},
-      permission = #{record.permission,jdbcType=VARCHAR}
+      permission = #{record.permission,jdbcType=VARCHAR},
+      rname = #{record.rname,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -163,19 +163,19 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.java.workstudy.pojo.TbRole">
     update tb_role
     <set>
-      <if test="rname != null">
-        rname = #{rname,jdbcType=VARCHAR},
-      </if>
       <if test="permission != null">
         permission = #{permission,jdbcType=VARCHAR},
+      </if>
+      <if test="rname != null">
+        rname = #{rname,jdbcType=VARCHAR},
       </if>
     </set>
     where rid = #{rid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.java.workstudy.pojo.TbRole">
     update tb_role
-    set rname = #{rname,jdbcType=VARCHAR},
-      permission = #{permission,jdbcType=VARCHAR}
+    set permission = #{permission,jdbcType=VARCHAR},
+      rname = #{rname,jdbcType=VARCHAR}
     where rid = #{rid,jdbcType=INTEGER}
   </update>
 </mapper>
