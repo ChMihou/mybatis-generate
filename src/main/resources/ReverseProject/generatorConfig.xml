@@ -52,6 +52,9 @@
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <table tableName="tb_role" ></table>
+        <table tableName="tb_shop" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
         <!-- 有些表的字段需要指定java类型
         <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
