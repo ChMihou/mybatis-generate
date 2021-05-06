@@ -1,0 +1,131 @@
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>测试参数</title>
+</head>
+<script src="/layui.js" type="text/javascript"></script>
+<script src="/xadmin.js" type="text/javascript"></script>
+<script src="/jquery.3.2.1.min.js" type="text/javascript"></script>
+<link href="/font.css" rel="stylesheet">
+<link href="/xadmin.css" rel="stylesheet">
+<style type="text/css">
+    .d1 {
+        border: 5px solid red;
+        width: 680px;
+        height: 450px;
+        text-align: center;
+        line-height: 40px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+</style>
+<body>
+<div class="d1">
+    <form id="form" action="" method="post">
+        <div class="layui-input-block">
+            <label class="layui-form-label">LastName:</label>
+            <input style="width: 180px;height: 30px" id="LastName" type="text" value="" name="LastName">
+            <label class="layui-form-label">Name:</label>
+            <input style="width: 180px;height: 30px" id="name" type="text" value="" name="name">
+        </div>
+        <div class="layui-input-block">
+            <label class="layui-form-label">CardNumber:</label>
+            <input style="width: 180px;height: 30px" id="cardNumber" type="text" value="" name="cardNumber">
+            <label class="layui-form-label">Cvv:</label>
+            <input style="width: 180px;height: 30px" id="cvv" type="text" value="" name="cvv">
+        </div>
+        <div class="layui-input-block">
+            <label class="layui-form-label">Year:</label>
+            <input style="width: 180px;height: 30px" id="year" type="text" value="" name="year">
+            <label class="layui-form-label">Month:</label>
+            <input style="width: 180px;height: 30px" id="month" type="text" value="" name="month"><br/>
+            <label class="layui-form-label">Day:</label>
+            <input style="width: 180px;height: 30px" id="day" type="text" value="" name="day">
+        </div>
+        <div class="layui-input-block">
+            <label class="layui-form-label">Postcode:</label>
+            <input style="width: 180px;height: 30px" id="postcode" type="text" value="" name="postcode">
+            <label class="layui-form-label">Country:</label>
+            <input style="width: 180px;height: 30px" id="country" type="text" value="" name="country">
+        </div>
+        <div class="layui-input-block">
+            <label class="layui-form-label">City:</label>
+            <input style="width: 180px;height: 30px" id="city" type="text" value="" name="city">
+            <label class="layui-form-label">Email:</label>
+            <input style="width: 180px;height: 30px" id="email" type="text" value="" name="email">
+        </div>
+        <div class="layui-input-block">
+            <label class="layui-form-label">Phone:</label>
+            <input style="width: 180px;height: 30px" id="phone" type="text" value="" name="phone">
+            <label class="layui-form-label">State:</label>
+            <input style="width: 180px;height: 30px" id="state" type="text" value="" name="state">
+        </div>
+        <div class="layui-input-block">
+            <label class="layui-form-label">Submit1:</label>
+            <input style="width: 180px;height: 30px" id="submit1" type="text" value="" name="submit1">
+            <label class="layui-form-label">Submit2:</label>
+            <input style="width: 180px;height: 30px" id="submit2" type="text" value="" name="submit2">
+        </div>
+        <div class="layui-input-block">
+            <label class="layui-form-label">URL:</label>
+            <input style="width: 480px;height: 30px" id="url" type="text" value="" name="url">
+        </div>
+        <div>
+            <button style="height: 58px;width: 180px;color: #222222;border: blue 3px double;margin-top: 30px;"
+                    class="layui-btn"
+                    type="submit" onclick="javascript:param();"><h1>提交</h1>
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+<script type="text/javascript">
+    function param() {
+        let LastName = $("#LastName").val();
+        let name = $("#name").val();
+        let cardNumber = $("#cardNumber").val();
+        let year = $("#year").val();
+        let month = $("#month").val();
+        let day = $("#day").val();
+        let cvv = $("#cvv").val();
+        let postcode = $("#postcode").val();
+        let country = $("#country").val();
+        let city = $("#city").val();
+        let email = $("#email").val();
+        let phone = $("#phone").val();
+        let state = $("#state").val();
+        let url = $("#url").val();
+        let submit1 = $("#submit1").val();
+        let submit2 = $("#submit2").val();
+        $.ajax({
+            url: "/testSelenium",
+            type: "POST",
+            data: {
+                LastName: LastName,
+                name: name,
+                cardNumber: cardNumber,
+                year: year,
+                month: month,
+                day: day,
+                cvv: cvv,
+                postcode: postcode,
+                country: country,
+                city: city,
+                email: email,
+                phone: phone,
+                state: state,
+                url: url,
+                submit1: submit1,
+                submit2: submit2
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data) {
+                    confirm("添加成功");
+                }
+            }
+        });
+    }
+</script>
+</html>
